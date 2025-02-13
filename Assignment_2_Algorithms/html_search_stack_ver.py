@@ -1,3 +1,5 @@
+import timeit
+
 def check_html_tags(file_path):
     with open(file_path, 'r') as f:
         content = f.read()
@@ -22,6 +24,21 @@ def check_html_tags(file_path):
     
     return "Valid HTML" if not stack else "Invalid HTML"
 
-file_path = input("Enter HTML file path: ")
-result = check_html_tags(file_path)
-print(result)
+def benchmark():
+    test_file = "C://Users/Patrick/Desktop/School/COP4533-Algorithmic-Design-and-Development/Assignment_2_Algorithms/index.html"  # Replace with the path to your test HTML file
+
+    timings = []
+    for _ in range(5):  # Run 5 times
+        start_time = timeit.default_timer()
+        vaild_check = check_html_tags(test_file)
+        end_time = timeit.default_timer()
+        timings.append(end_time - start_time)
+    
+    for i, timing in enumerate(timings, 1):
+        print(f"Run {i}: {timing:.6f} seconds | Result: {vaild_check}")
+    
+    average_time = sum(timings) / len(timings)
+    print(f"\nAverage Time: {average_time:.6f} seconds")
+
+if __name__ == "__main__":
+    benchmark()
