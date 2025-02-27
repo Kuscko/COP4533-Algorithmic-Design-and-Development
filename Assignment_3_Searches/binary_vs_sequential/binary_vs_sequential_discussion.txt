@@ -1,0 +1,24 @@
+Time Complexity Analysis
+    Sequential Search
+        The Add method is O(1) - as adding an element to the end of a list is a constant-time operation.
+        The Find method is O(n) - where n is elements in the list, in the worst case the Sequential search 
+            has to check every element in the list.
+    Binary Search
+        The Add method is O(n log n) - as adding an element to the end of the list is O(1), but sortingv the list each time is O(n log n)
+            as it has to go through each item and change it's position in the list.
+        The Find method is O(log n) - as a binary search has been recorded to be O(log n) because it divides the search in half each time,
+            resulting in a logarithmic time Complexity.
+
+Results and Comparison
+    Sequential Search
+        Since the time complexity of the find element is O(n), it means that for n being elements in the list, the time taken is 
+            going over each element in the list and increases linearly with n. Smaller lists compared to the 20 here may not perform
+            differently but as the list were to grow from 20 to say 1000, the time for the Sequential search will grow with the number 
+            of elements.
+    Binary Search
+        Since a binary search is a logarithmically time complext search O(log n), the time taken, like Sequential search, increases with
+            the number of elements in the list. The binary search is much faster than a Sequential list because the search doesn't have 
+            to go through every element when it's sorted.
+
+    Overall, the binary search is more effective at finding elements in a sorted list compared to a sequential search, especially 
+        if the size of the dataset increases.
