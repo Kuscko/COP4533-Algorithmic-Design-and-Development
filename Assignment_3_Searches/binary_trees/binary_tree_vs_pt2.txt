@@ -1,0 +1,21 @@
+Time Complexity Analysis
+    Binary tree
+        Add Method - is O(log n), as adding an element to a binary search tree is balanced by default.
+        Find method - is O(log n), as it's finding an element in a balanced binary search tree.
+
+Results and Comparison
+    Binary Tree Search:
+        The time complexity being O(log n) overall, means that time runs logarithmically with the number of elements in the dataset.
+            It's great for large datasets so long as they remain, balanced or the nodes on either end of the parent differ in length by
+            at most one.
+    Sequential Search
+        It's time complexity of it's find method is O(n), it's less efficient compared to the binary tree especially with larger datasets Since
+            the time complexity increases laterally with the number of elements in the datasets.
+    Binary Search
+        The time complexity of the binary search is O(log n), meaning the time taken is similar as the binary tree in complexity, it's similar
+            to the Binary tree search, works great for large lists.
+
+    Overall, the binary tree search is good for finding elements in a balanced tree and so long as it's balanced it guarentee's a time complexity of
+        O(log n). The binary search tree performs comparitively to the binary search.  But if the binary tree is unbalanced, basically a linked list, 
+        it devolves to O(n) making it less efficient then the Binary Search. Sequential Search is less efficient then both at the best case, and the same as a
+        binary search tree in it's worst case due to it's O(n) time complexity, making it not suitable for large datasets.

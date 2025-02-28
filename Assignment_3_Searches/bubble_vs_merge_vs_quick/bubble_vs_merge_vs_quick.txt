@@ -1,0 +1,34 @@
+Time Complexity Analysis
+    Bubble Sorting
+        Add method - is O(1), adds an element to the end of a list is a constant-time operation.
+        Sort Method - is O(n^2), as it repeatedly steps through the list, compares adjacent elements, and swaps them if they are in the wrong order. 
+            This process is repeated until the list is sorted. In the worst case, each element needs to be compared with every other element, 
+            making it O(n^2).
+    Merge Sorting
+        Add method - is O(1), adds an element to the end of a list is a constant-time operation.
+        Sort Method - is O(n log n), as it increases logarithmically due to the elements in the list and divides-and-conqures the list into
+            smaller halfs and sorts those then merges them back together. The division of the elements takes O(n log n), and merging them back
+            takes O(n).
+    Quick Sorting
+        Add method - is O(1), adds an element to the end of a list is a constant-time operation.
+        Sort Method - is O(n log n), as it is a divide-and-conqure algorithm like a merge sort except it partitions on a central/pivot
+            element, then it recursively sorts the sublists around the pivot. It's normally O(n log n) since the lists are divided into equal lengths.
+            But, worst-case scenario if the pivot element is the one of the lowest or highest elements, then time complexity will degrade to O(n ^ 2)
+            because the lists are undivided.
+
+Results and Comparison
+    Bubble Sorting
+        The time complexity of the sort methos is O(n^2), meaning time increases quadratically with the number of elements. It's 
+            inefficient for large datasets due to its quadratic time complexity. It performs poorly compared to other sorting 
+            algorithms because it requires multiple passes through the list and many comparisons and swaps.
+    Merge Sorting
+        The time complexity of this sort method is O(n log n), meaning time increases logarithmically with the number of elements.
+            It's very effective for large datasets because it guarentes O(n log n). It is a stable sort and performs well even for large lists.
+    Quick Sorting
+        The time complexity of the sort method is O(n log n), meaning time increases logarithmically with the number of elements.
+            It's good for large lists and does well, but it can degrade to O(n^2) in the worst case if the pivot element is to large or to small.
+
+    Overall, the merge sort method is the most efficient for working with large lists, it guarentes an O(n log n) for time complexity.
+        Compared to the the quick sort they're about the same for large lists but can downgrade to O(n^2). Bubble sort is the least efficient, since it
+        guarentes an O(n^2) time complexity, it does poorly compared to the other two and does terrible with large datasets.
+
