@@ -1,0 +1,58 @@
+Both program_a.py and program_b.py were written to find the shortest path between nodes 'A' and 'I' in the given graph.
+
+program_a uses Dijkstra's algorithm as we were taught about in the book and material from the previous module, program_b uses the A* algorithm that i was familiar with from previous a previous project i worked on for a game i used to play. 
+
+The Results
+
+Dijkstra Algorithm (program_a.py)
+    Shortest path from A to I using Dijkstra's Algorithm: ['A', 'D', 'I']
+    Distance: 42
+    Time taken: 0.0005353000 seconds
+
+A* Algorithm (program_b.py)
+    Shortest path from A to I using A* Algorithm: ['A', 'D', 'I']
+    Distance: 42
+    Time taken: 0.0005044000 seconds
+
+Analysis:
+    Both algorithms correctly found the shortest path from 'A' to 'I' as ['A', 'D', 'I'] was a total distance of 42.
+    In regards to time taken, the A* Algorithm completed slightly faster than Dijkstra's algorithm. However the difference is within .00004 of time completion and may change based on the graph used.
+
+Time complexity
+    Now for the meat and potatoes.
+
+    Dijkstra's Algorithm
+        Initialization of the prgram where we define distances and previous nodes requires us to iterate over all nodes in the graph, making it O(V) where V is the number of verticies (nodes).
+        Initializating the queue is a constant time operation so it's O(1).
+        While loop with the queue, heappop and heappush are O(Log V). It's loop iterations is O((V + E) LOG V), as the while loop runs until the priority queue is empty, where E is the number of edges.
+        Reconstructing the path was for getting the path from the end node to the start node, it has to visit every node till it gets the start node. So this is O(V) where V is the number of verticies (nodes).
+
+        Overall, the time complexity is O((V + E)log V) due to the high use case of the while loop, which processes each edge, node, and performs queue operations. The other functions of the program don't effect the overall complexity as the while loop does.
+
+    A* Algorithm
+        The Heuristic function calculates the manhattan distance between two nodes and takes constant time.
+        Initalization of g_costs, f_costs, and previous nodes requires us to iterate over all verticies (nodes), making it O(V) where V is verticies.
+        Initializating the queue is a constant time operation so it's O(1).
+        Main loop of the algorithm, heappop and heappush are O(Log V). It's loop iterations is O((V + E) LOG V), as the while loop runs until the priority queue is empty, where E is the number of edges.
+        Reconstructing the path was for getting the path from the end node to the start node, it has to visit every node till it gets the start node. So this is O(V) where V is the number of verticies (nodes).
+
+        Overall, the time complexity is also O((V + E)log V) due to the high use case of the while loop, which processes each edge, node, and performs queue operations. The other functions of the program don't effect the overall complexity as the while loop does.
+
+        The heuristic function helps guide the search in the A* Algorithm, reducing the number of nodes compared to Dijkstra going through all nodes.
+
+Comparison
+    Efficiency:
+        Dijkstra is efficient for finding the shortest path in a graph with no negative weights and explores every path once to ensure the shortest path is found.
+        A* Algorithm though is more efficient overall due to the heuristic guiding the search, and can explore larger graphs faster than Dijkstra with the right heuristic.
+    Heuristic:
+        Dijkstra doesn't use a heuristic, it relies only on the distances between nodes.
+        A* Algorithm uses a heuristic to estimate the cost from the current node to the goal node. The quality of the heuristic can impact the performance of the algorithm.
+    Use Cases:
+        Dijkstra is suitable for general, shortest path travel between one node to another with non-negative weights and guarentees the shortest path.
+        A* Algorithm is great for games (how I found it), or robotics where the heuristic can be designed to closely estimate the actual cost of reaching the goal node.
+
+Conclusion
+    Both algorithms are effective to their own strengths in finding the shortest path in a graph. Dijkstra is reliable for general use cases, while A* can be better suited for larger datasets so long as a good heuristic is used.
+    Choosing between the two is dependant on what the problem being solved is, and in this example they both performed remarkably well, got the same answer but A* was able to complete it in a shorter time.
+
+
